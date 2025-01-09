@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 //import posts from "./data/posts.js";
-import HeaderComponent from './components/HeaderComponent'
-import FooterComponent from './components/FooterComponent'
+import DefaultLayout from "./pages/DefaultLayout";
 import MainComponent from './components/MainComponent'
 import HomePage from './pages/HomePage'
 import ChiSiamo from './pages/ChiSiamo'
@@ -14,17 +13,21 @@ function App() {
 
   return (
     <>
-      <HeaderComponent />
+
       <BrowserRouter>
         <Routes>
-          <Route path="/" Component={HomePage} />
-          <Route path="/posts" Component={MainComponent} />
-          <Route path="/us" Component={ChiSiamo} />
+          <Route Component={DefaultLayout}>
+            <Route path="/" Component={HomePage} />
+            <Route path="/posts" Component={MainComponent} />
+            <Route path="/us" Component={ChiSiamo} />
+          </Route>
         </Routes>
       </BrowserRouter>
-      <FooterComponent />
+
     </>
   );
 }
 
 export default App
+
+// {path = "/"} === {index}

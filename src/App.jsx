@@ -17,14 +17,13 @@ function App() {
       <HeaderComponent />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={HomePage} />
-          <Route path="/posts" element={MainComponent} />
-          <Route path="/us" element={ChiSiamo} />
+          <Route path="/" Component={HomePage} />
+          <Route path="/posts" Component={MainComponent} />
+          <Route path="/us" Component={ChiSiamo} />
         </Routes>
       </BrowserRouter>
       <FooterComponent />
     </>
-
   );
 }
 

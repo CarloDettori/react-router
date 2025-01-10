@@ -3,7 +3,7 @@ import ButtonDeleteComponent from "./ButtonDeleteComponent";
 import ButtonInfoComponent from "./ButtonInfoComponent";
 
 
-function CardComponent({ element }) {
+function CardComponent({ el }, onDelete) {
 
     // let template = [];
     // props.posts.map((element, index) => {
@@ -16,21 +16,21 @@ function CardComponent({ element }) {
 
     return (
         <div className="card" >
-            <img src={element.image} alt="600x400img" />
+            <img src={el.image} alt="600x400img" />
             <div className="info">
                 <div className="d-flex">
-                    <h3>{element.title}</h3>
+                    <h3>{el.title}</h3>
                     <ul className="d-flex">
-                        {element.tags.map((tag) => {
+                        {el.tags.map((tag) => {
                             <li className="post-tags" key={`tags-${tag}`}>
                                 {tag}
                             </li>
                         })}
                     </ul>
                 </div>
-                <p>{element.content}</p>
+                <p>{el.content}</p>
                 <ButtonInfoComponent />
-                <ButtonDeleteComponent />
+                <ButtonDeleteComponent onDelete={onDelete(el.id)} />
             </div>
         </div>
     )

@@ -47,7 +47,7 @@ function MainComponent() {
             <main>
                 <div className="d-flex flex-wrap">
                     {publishedPosts.map((post) => (
-                        <CardComponent key={`card-${post.id}`} element={post} onDelete={() => { deleteItem(publishedPosts.id) }} />
+                        <CardComponent key={`card-${post.id}`} el={post} onDelete={deleteItem} />
                     ))}
                 </div>
             </main>

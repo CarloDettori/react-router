@@ -19,7 +19,7 @@ const newPost = {
 }
 
 
-function MyForm() {
+function FormPage() {
     const [formPost, setFormPost] = useState(initialPost);
     //const [blogPosts, SetBlogPosts] = useState(posts)
     //const filteredPost = filterPot(posts, search)
@@ -176,4 +176,4 @@ function MyForm() {
     )
 }
 
-export default MyForm;
+export default FormPage;

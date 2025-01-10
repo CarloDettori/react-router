@@ -4,6 +4,7 @@ import DefaultLayout from "./pages/DefaultLayout";
 import MainComponent from './components/MainComponent'
 import HomePage from './pages/HomePage'
 import ChiSiamo from './pages/ChiSiamo'
+import FormPage from "./pages/FormPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -20,6 +21,8 @@ function App() {
             <Route path="/" Component={HomePage} />
             <Route path="/posts" Component={MainComponent} />
             <Route path="/us" Component={ChiSiamo} />
+            <Route path="/form" Component={FormPage} />
+
           </Route>
         </Routes>
       </BrowserRouter>

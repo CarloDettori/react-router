@@ -47,7 +47,6 @@ function MainComponent() {
                         <CardComponent key={`card-${post.id}`} element={post} />
                     ))}
                 </div>
-                {/* <MyForm tags={tagList} /> */}
             </main>
 
             {/* <aside>

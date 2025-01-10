@@ -60,6 +60,8 @@ li:nth-child(1) {
 
 #header {
     padding: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
 }
 
 main {
@@ -90,9 +92,12 @@ body {
     background-color: #e6e6e6;
 }
 
-#button {
-    color: white
+.btn {
+    color: white;
+    margin-right: 15px;
 }
+
+
 
 section {
     max-width: 600px;

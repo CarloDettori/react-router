@@ -1,5 +1,6 @@
 
-import ButtonComponent from "./ButtonComponent";
+import ButtonDeleteComponent from "./ButtonDeleteComponent";
+import ButtonInfoComponent from "./ButtonInfoComponent";
 
 
 function CardComponent({ element }) {
@@ -12,6 +13,7 @@ function CardComponent({ element }) {
     //     // template.push()
     // })
     //console.log(template)
+
     return (
         <div className="card" >
             <img src={element.image} alt="600x400img" />
@@ -27,7 +29,8 @@ function CardComponent({ element }) {
                     </ul>
                 </div>
                 <p>{element.content}</p>
-                <ButtonComponent />
+                <ButtonInfoComponent />
+                <ButtonDeleteComponent />
             </div>
         </div>
     )

@@ -19,6 +19,9 @@ function MainComponent() {
         getData()
     }, []);
     //console.log(publishedPosts)
+    function deleteItem(id) {
+        setPublishedPosts(publishedPosts.filter((el) => el.id !== id))
+    }
     function getData() {
         axios
             .get(postsUrl + "/posts/")
@@ -44,7 +47,7 @@ function MainComponent() {
             <main>
                 <div className="d-flex flex-wrap">
                     {publishedPosts.map((post) => (
-                        <CardComponent key={`card-${post.id}`} element={post} />
+                        <CardComponent key={`card-${post.id}`} element={post} onDelete={() => { deleteItem(publishedPosts.id) }} />
                     ))}
                 </div>
             </main>

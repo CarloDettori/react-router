@@ -1,13 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import React from 'react';
 
-import showPostComponent from "./components/ShownPostComponent";
+
 //import posts from "./data/posts.js";
 import DefaultLayout from "./pages/DefaultLayout";
 import MainComponent from './components/MainComponent'
 import HomePage from './pages/HomePage'
 import ChiSiamo from './pages/ChiSiamo'
 import FormPage from "./pages/FormPage";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 import './App.css'
@@ -22,7 +23,6 @@ function App() {
           <Route Component={DefaultLayout}>
             <Route path="/" Component={HomePage} />
             <Route path="/posts" Component={MainComponent} />
-
             <Route path="/us" Component={ChiSiamo} />
             <Route path="/form" Component={FormPage} />
 

@@ -44,6 +44,11 @@ function MainComponent() {
     function deleteItem(id) {
         setPublishedPosts(publishedPosts.filter((el) => el.id !== id))
     }
+    function showPost(id) {
+        setPublishedPosts(publishedPosts.find((el) => el.id === id))
+
+
+    }
 
 
     return (

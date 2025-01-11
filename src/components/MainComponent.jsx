@@ -19,9 +19,7 @@ function MainComponent() {
         getData()
     }, []);
     //console.log(publishedPosts)
-    function deleteItem(id) {
-        setPublishedPosts(publishedPosts.filter((el) => el.id !== id))
-    }
+
     function getData() {
         axios
             .get(postsUrl + "/posts/")
@@ -41,7 +39,9 @@ function MainComponent() {
             })
     }
     console.log(publishedPosts)
-
+    function deleteItem(id) {
+        setPublishedPosts(publishedPosts.filter((el) => el.id !== id))
+    }
     return (
         <>
             <main>

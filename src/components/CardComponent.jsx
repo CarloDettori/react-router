@@ -3,7 +3,7 @@ import ButtonDeleteComponent from "./ButtonDeleteComponent";
 import ButtonInfoComponent from "./ButtonInfoComponent";
 
 
-function CardComponent({ el }, onDelete) {
+function CardComponent({ el, onDelete }) {
 
     // let template = [];
     // props.posts.map((element, index) => {
@@ -30,7 +30,7 @@ function CardComponent({ el }, onDelete) {
                 </div>
                 <p>{el.content}</p>
                 <ButtonInfoComponent />
-                <ButtonDeleteComponent onDelete={onDelete(el.id)} />
+                <ButtonDeleteComponent onDelete={() => onDelete(el.id)} />
             </div>
         </div>
     )

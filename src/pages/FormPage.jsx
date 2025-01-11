@@ -81,7 +81,7 @@ function FormPage() {
         //console.log(myPost.content)
         setPostList([...postList, myPost]);
         //setMyPost(newPost);
-        console.log("-1title: " + myPost.title + " -2iamge: " + myPost.image + " -3content: " + myPost.content + " -4tags: " + myPost.tags + " -5published: " + myPost.published)
+        console.log(myPost)
         posts.push(myPost);
         console.log(posts)
         setFormPost(initialPost);

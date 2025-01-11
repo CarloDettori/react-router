@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+
+import showPostComponent from "./ShownPostComponent";
 import CardComponent from "./CardComponent";
 import axios from "axios"
 
@@ -42,13 +44,16 @@ function MainComponent() {
     function deleteItem(id) {
         setPublishedPosts(publishedPosts.filter((el) => el.id !== id))
     }
+
+
     return (
         <>
             <main>
                 <div className="d-flex flex-wrap">
                     {publishedPosts.map((post) => (
-                        <CardComponent key={`card-${post.id}`} el={post} onDelete={deleteItem} />
+                        <CardComponent key={`card-${post.id}`} el={post} onDelete={deleteItem} showPost={showPost} />
                     ))}
+
                 </div>
             </main>
 

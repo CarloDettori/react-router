@@ -17,7 +17,7 @@ function HeaderComponent() {
                     <NavLink to="/us">Chi Siamo</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/form">Chi Siamo</NavLink>
+                    <NavLink to="/form">Crea un post</NavLink>
                 </li>
             </ul>
         </header>

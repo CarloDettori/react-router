@@ -1,9 +1,10 @@
-
+import React from 'react';
+import { Link } from 'react-router-dom';
 import ButtonDeleteComponent from "./ButtonDeleteComponent";
 import ButtonInfoComponent from "./ButtonInfoComponent";
 
 
-function CardComponent({ el, onDelete }) {
+function CardComponent({ el, onDelete, showPost }) {
 
     // let template = [];
     // props.posts.map((element, index) => {
@@ -29,7 +30,7 @@ function CardComponent({ el, onDelete }) {
                     </ul>
                 </div>
                 <p>{el.content}</p>
-                <ButtonInfoComponent />
+                <ButtonInfoComponent showPost={() => showPost(el.id)} />
                 <ButtonDeleteComponent onDelete={() => onDelete(el.id)} />
             </div>
         </div>

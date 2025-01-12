@@ -16,7 +16,7 @@ import axios from "axios"
 
 const postsUrl = "http://localhost:3000"
 function MainComponent() {
-    const [publishedPosts, setPublishedPosts] = useState([])
+    let [publishedPosts, setPublishedPosts] = useState([])
     useEffect(() => {
         getData()
     }, []);
@@ -45,9 +45,7 @@ function MainComponent() {
         setPublishedPosts(publishedPosts.filter((el) => el.id !== id))
     }
     function showPost(id) {
-        setPublishedPosts(publishedPosts.find((el) => el.id === id))
-
-
+        setPublishedPosts(publishedPosts.filter((el) => el.id === id))
     }
 
 

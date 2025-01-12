@@ -1,13 +1,25 @@
-function showPostComponent() {
+function ShowPostComponent() {
+
 
     return (
-        <div>
-            <h1>{post.title}</h1>
-            <img src={post.image} alt={post.title} />
-            <p>{post.content}</p>
+        <div className="card" >
+            <img src={el.image} alt="600x400img" />
+            <div className="info">
+                <div className="d-flex">
+                    <h3>{el.title}</h3>
+                    <ul className="d-flex">
+                        {el.tags.map((tag) => {
+                            <li className="post-tags" key={`tags-${tag}`}>
+                                {tag}
+                            </li>
+                        })}
+                    </ul>
+                </div>
+                <p>{el.content}</p>
+                <ButtonDeleteComponent onDelete={() => onDelete(el.id)} />
+            </div>
         </div>
     )
-
 }
 
-export default showPostComponent;
+export default ShowPostComponent;

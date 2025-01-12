@@ -1,6 +1,6 @@
-function ButtonDeleteComponent({ onDelete }) {
+function ButtonDeleteComponent({ onDelete, post }) {
     return (<>
-        <button id="button-detete" type="button" className="btn btn-warning" onClick={() => onDelete()}>Cancella</button>
+        <button id="button-detete" type="button" className="btn btn-warning" onClick={() => onDelete(post)}>Cancella</button>
     </>
     )
 }

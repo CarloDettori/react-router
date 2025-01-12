@@ -11,6 +11,18 @@ import ChiSiamo from './pages/ChiSiamo'
 import FormPage from "./pages/FormPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+export const tags = [
+  "javascript",
+  "html",
+  "css",
+  "python",
+  "java",
+  "c++",
+  "php",
+  "ruby",
+  "sql",
+  "xml",
+];
 
 import './App.css'
 
@@ -22,9 +34,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route Component={DefaultLayout}>
-            <Route path="/" Component={HomePage} />
+            <Route index Component={HomePage} />
             <Route path="/posts" Component={MainComponent}>
-              <Route path=":id" component={ShowPostComponent} />
+              <Route path=":id" Component={ShowPostComponent} />
             </Route>
             <Route path="/us" Component={ChiSiamo} />
             <Route path="/form" Component={FormPage} />

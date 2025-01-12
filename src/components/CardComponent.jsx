@@ -6,15 +6,6 @@ import ButtonInfoComponent from "./ButtonInfoComponent";
 
 function CardComponent({ el, onDelete, showPost }) {
 
-    // let template = [];
-    // props.posts.map((element, index) => {
-    //     // let postTags = [];
-
-    //     //console.log(postTags)
-    //     // template.push()
-    // })
-    //console.log(template)
-
     return (
         <div className="card" >
             <img src={el.image} alt="600x400img" />

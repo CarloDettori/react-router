@@ -1,6 +1,6 @@
-function ButtonInfoComponent({ showPost }) {
+function ButtonInfoComponent({ showPost, post }) {
     return (<>
-        <button id="button-info" type="button" className="btn btn-warning" onClick={() => showPost()}>Leggi di piu</button>
+        <button id="button-info" type="button" className="btn btn-warning" onClick={() => showPost(post)}>Leggi di piu</button>
     </>
     )
 }

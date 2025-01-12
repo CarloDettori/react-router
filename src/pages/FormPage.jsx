@@ -4,9 +4,12 @@ import { useState } from "react";
 //import TagList from "./TagList";
 
 const initialPost = {
-    name: "",
-    price: 0,
-    available: false,
+    id: 0,
+    title: '',
+    image: '',
+    content: '',
+    tags: 'lezione-7-gennaio',
+    published: false,
 };
 
 const newPost = {
@@ -18,6 +21,18 @@ const newPost = {
     published: false,
 }
 
+const tags = [
+    "javascript",
+    "html",
+    "css",
+    "python",
+    "java",
+    "c++",
+    "php",
+    "ruby",
+    "sql",
+    "xml",
+];
 
 function FormPage() {
     const [formPost, setFormPost] = useState(initialPost);
@@ -82,8 +97,8 @@ function FormPage() {
         setPostList([...postList, myPost]);
         //setMyPost(newPost);
         console.log(myPost)
-        posts.push(myPost);
-        console.log(posts)
+        newPostList.push(myPost);
+        console.log(newPostList)
         setFormPost(initialPost);
     }
 

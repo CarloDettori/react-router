@@ -29,7 +29,7 @@ function MainComponent() {
 
             })
     }
-    console.log(publishedPosts)
+    //console.log(publishedPosts)
     function deleteItem(id) {
         setPublishedPosts(publishedPosts.filter((el) => el.id !== id));
     }

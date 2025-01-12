@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import ButtonDeleteComponent from "./ButtonDeleteComponent";
 import ButtonInfoComponent from "./ButtonInfoComponent";
 
@@ -21,7 +21,7 @@ function CardComponent({ el, onDelete, showPost }) {
                     </ul>
                 </div>
                 <p>{el.content}</p>
-                <ButtonInfoComponent showPost={() => showPost(el.id)} post={el} />
+                <Link className='btn btn-warning' to={`/posts/${el.id}`}>Vedi dettaglio</Link>
                 <ButtonDeleteComponent onDelete={() => onDelete(el.id)} />
             </div>
         </div>

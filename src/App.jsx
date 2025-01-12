@@ -5,7 +5,7 @@ import React from 'react';
 //import posts from "./data/posts.js";
 import DefaultLayout from "./pages/DefaultLayout";
 import MainComponent from './components/MainComponent'
-import ShowPostComponent from "./components/ShownPostComponent";
+import PostPage from "./pages/PostPage";
 import HomePage from './pages/HomePage'
 import ChiSiamo from './pages/ChiSiamo'
 import FormPage from "./pages/FormPage";
@@ -36,7 +36,8 @@ function App() {
           <Route Component={DefaultLayout}>
             <Route index Component={HomePage} />
             <Route path="/posts" Component={MainComponent}>
-              <Route path=":id" Component={ShowPostComponent} />
+              <Route path=":id" Component={PostPage} />
+
             </Route>
             <Route path="/us" Component={ChiSiamo} />
             <Route path="/form" Component={FormPage} />

@@ -21,7 +21,7 @@ function CardComponent({ el, onDelete, showPost }) {
                     </ul>
                 </div>
                 <p>{el.content}</p>
-                <ButtonInfoComponent showPost={() => showPost(el.id)} post={el} />
+                <ButtonInfoComponent showPost={showPost} id={el.id} />
                 <ButtonDeleteComponent onDelete={() => onDelete(el.id)} />
             </div>
         </div>

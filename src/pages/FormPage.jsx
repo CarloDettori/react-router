@@ -1,23 +1,25 @@
 import { useState } from "react";
+import axios from "axios"
+import { useNavigate } from "react-router-dom";
 //import posts from "../data/posts";
 //import CheckTagComponent from "./CheckTagComponent";
 //import TagList from "./TagList";
 
-const initialPost = {
-    id: 0,
-    title: '',
-    image: '',
-    content: '',
-    tags: 'lezione-7-gennaio',
-    published: false,
-};
+// const initialPost = {
+//     id: 0,
+//     title: '',
+//     image: '',
+//     content: '',
+//     tags: [],
+//     published: false,
+// };
 
 const newPost = {
     id: 0,
     title: '',
     image: '',
     content: '',
-    tags: 'lezione-7-gennaio',
+    tags: [],
     published: false,
 }
 
@@ -34,12 +36,16 @@ const tags = [
     "xml",
 ];
 
+
+
 function FormPage() {
-    const [formPost, setFormPost] = useState(initialPost);
+    const navigate = useNavigate();
+    const [myPost, setMyPost] = useState(newPost)
+
+    // const [formPost, setFormPost] = useState(initialPost);
     //const [blogPosts, SetBlogPosts] = useState(posts)
     //const filteredPost = filterPot(posts, search)
-    const [myPost, setMyPost] = useState(newPost)
-    const [postList, setPostList] = useState([]);
+    // const [postList, setPostList] = useState([]);
     // const [checkedTagList, setCheckedTagList] = useState(
     //     newPost.tags.map((tag) => false)
     // );
@@ -83,24 +89,66 @@ function FormPage() {
         // } else {
         //     value = ev.target.value
         // }
-        setMyPost({ ...myPost, [ev.target.name]: value });
+
+        console.log(ev.target.type);
+
+        const inputValue = ev.target.type === "checkbox" ? ev.target.checked : ev.target.value
+
+        setMyPost({ ...myPost, [ev.target.name]: inputValue });
 
 
     }
 
     function handleSubmit(ev) {
         ev.preventDefault()
-        const newPostList = [...postList];
-        newPostList.push(myPost)
-        //console.log(myPost.title)
-        //console.log(myPost.content)
-        setPostList([...postList, myPost]);
+        // const newPostList = [...postList];
+        // newPostList.push(myPost)
+        // //console.log(myPost.title)
+        // //console.log(myPost.content)
+        // setPostList([...postList, myPost]);
         //setMyPost(newPost);
+
+        // send form data to server
         console.log(myPost)
-        newPostList.push(myPost);
-        console.log(newPostList)
-        setFormPost(initialPost);
+
+        // axios.post
+
+        // risposta server then()
+        // console.log 
+        // redirect 
+
+        // newPostList.push(myPost);
+        // console.log(newPostList)
+
+        axios
+            .post("http://localhost:3000/posts/", myPost)
+            .then((res) => {
+                console.log(res);
+                console.log(res.data);
+                // console.log(res.data.onePost);
+
+                // reset form
+                // setMyPost(newPost);
+
+                navigate("/posts")
+
+                // useEffect(() => {
+                // }, []);
+
+                // newPostList.push(myPost)
+                // console.log(newPostList)
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+            .finally(() => {
+                console.log("finally");
+            });
+
     }
+
+
+
 
     return (
         <section>
@@ -175,6 +223,7 @@ function FormPage() {
                         value=""
                         id="flexCheckDefault"
                         onChange={(ev) => handleImput(ev)}
+                        name="published"
                     />
                     <label className="form-check-label" htmlFor="flexCheckDefault">
                         yes

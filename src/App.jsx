@@ -35,10 +35,12 @@ function App() {
         <Routes>
           <Route Component={DefaultLayout}>
             <Route index Component={HomePage} />
-            <Route path="/posts" Component={MainComponent}>
-              <Route path=":id" Component={PostPage} />
 
+            <Route path="/posts">
+              <Route index Component={MainComponent} />
+              <Route path=":id" Component={PostPage} />
             </Route>
+
             <Route path="/us" Component={ChiSiamo} />
             <Route path="/form" Component={FormPage} />
 

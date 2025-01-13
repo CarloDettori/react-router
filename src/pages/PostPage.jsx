@@ -7,16 +7,19 @@ import CardComponent from "../components/CardComponent.jsx";
 const apiUrl = "http://localhost:3000";
 export default function PostPage() {
     const { id } = useParams();
+    console.log(id);
+
     const [post, setPost] = useState(null);
 
     useEffect(getData, [id]);
+
 
     function getData() {
         axios
             .get(apiUrl + "/posts/" + id)
             .then((res) => {
-                //console.log(res);
-                setPost(res.data.item);
+                console.log(res);
+                setPost(res.data.onePost);
             })
             .catch((error) => {
                 console.log(error);
@@ -28,17 +31,13 @@ export default function PostPage() {
 
     return (
         <>
+
             {post && (
-                <CardComponent
-
-                    id={post.id}
-                    title={post.title}
-                    image={post.image}
-                    content={post.content}
-                    tags={post.tags.join(", ")}
-                    published={post.published}
-
-                />
+                <article>
+                    <h3>{post.title}</h3>
+                    <img src={post.image} alt="600x400img" />
+                    <p>{post.content}</p>
+                </article>
             )}
         </>
     );
